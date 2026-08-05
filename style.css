@@ -1,0 +1,157 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+
+.todo-box{
+    width:450px;
+    max-width:100%;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    color:white;
+}
+
+.todo-box h1{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.input-group{
+    margin-bottom:15px;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+    font-size:16px;
+}
+
+#addBtn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#00d084;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#addBtn:hover{
+    background:#00b96b;
+    transform:scale(1.02);
+}
+
+#taskList{
+    list-style:none;
+    margin-top:25px;
+}
+
+.task{
+    background:rgba(255,255,255,.2);
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    animation:fadeIn .3s ease;
+}
+
+.task.completed span{
+    text-decoration:line-through;
+    opacity:.6;
+}
+
+.task-info{
+    flex:1;
+}
+
+.task-info p{
+    margin-top:5px;
+    font-size:13px;
+    color:#f0f0f0;
+}
+
+.actions{
+    display:flex;
+    gap:8px;
+    margin-top:10px;
+}
+
+.actions button{
+    border:none;
+    padding:8px 12px;
+    border-radius:8px;
+    cursor:pointer;
+    color:white;
+}
+
+.complete{
+    background:#28a745;
+}
+
+.edit{
+    background:#007bff;
+}
+
+.delete{
+    background:#dc3545;
+}
+
+.actions button:hover{
+    opacity:.9;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:500px){
+    .todo-box{
+        padding:20px;
+    }
+
+    .task{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .actions{
+        width:100%;
+        justify-content:space-between;
+    }
+}
